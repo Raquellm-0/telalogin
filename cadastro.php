@@ -35,7 +35,6 @@
     <?php
         if(isset($_POST['nome']))
         {
-            echo "passou aqui";
             $nome = $_POST['nome'];
             $telefone = $_POST['telefone'];
             $email = $_POST['email'];
@@ -49,34 +48,60 @@
                 $usuario->conectar("cadastrousuarioturma33","localhost","root","");
 
                 if($usuario->msgErro == "")
-                { echo "conectou no banco";
+                { 
                     if($senha == $confSenha)
-                    {echo "conectou no banco";
+                    {
 
                         if($usuario->cadastrar($nome, $telefone, $email, $senha))
-                        { echo "tentou cadastrar";
+                        { 
                             ?>
                                 <!-- bloco de HTML -->
                                 <div class="msg-sucesso">
                                     <p>Cadastrado com Sucesso</p>
-                                    <p>Clique <a href="login.php">aqui</a>para logar.</p>
+                                    <p>Clique <a href="login.php">aqui </a> para logar.</p>
                                 </div>
                             <?php
                         }
                         else
                         {
-                            echo "tento outra vez".$usuario->msgErro;
+                            ?>
+                                <div class="msg-erro">
+                                    <p>Email Já Cadastrado.</p>
+                                </div> 
+
+                            <?php
                         }
                     }
                     else
                     {
-                        echo "tento outra vez".$usuario->msgErro;
+                        ?>
+                            <div class="msg-erro">
+                            <p>Senha e Confirmar</p>
+                            </div> 
+
+                        <?php
+                                
                     }
                 }
                 else
                 {
-                    echo "tento outra vez".$usuario->msgErro;
+                    ?>
+                    <div class="msg-erro">
+                        <?php echo "Erro: ",$usuario->msgErro;?>
+                    </div> 
+
+                    <?php
+
                 }
+            }
+            else
+            {
+                ?>
+                    <div class="msg-erro">
+                        <p>Preencha todos os campos.</p>
+                    </div> 
+
+                <?php
             }
         }
     ?>

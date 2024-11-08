@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Logou...</h1>
-    
+
 <?php
 // Configurações de conexão com o banco de dados
 $servername = "localhost";
 $username = "seu_usuario";
 $password = "sua_senha";
-$dbname = "cadastrousuarioturma33";
+$dbname = "nome_do_banco_de_dados";
 
 // Criando a conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -64,8 +55,5 @@ $result = $conn->query($sql);
         $conn->close();
         ?>
     </table>
-</body>
-</html>
-
 </body>
 </html>
