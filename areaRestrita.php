@@ -4,68 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- <style>
+        h1{
+            color: #3a5a40;
+            font-size: 30px;
+            padding: 0% 20px;
+            margin-top: -25rem;
+            display: flex;
+        }
+    </style> -->
 </head>
 <body>
-    <h1>Logou...</h1>
+    <!-- <h1>Logou...</h1> -->
     
+</body>
+</html>
 <?php
-// Configurações de conexão com o banco de dados
-$servername = "localhost";
-$username = "seu_usuario";
-$password = "sua_senha";
-$dbname = "cadastrousuarioturma33";
-
-// Criando a conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificando a conexão
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
-
-// Consulta SQL para buscar os dados
-$sql = "SELECT id_usuario, nome, email, telefone, senha FROM usuarios";
-$result = $conn->query($sql);
+    require_once 'usuario.php';
+    $usuario = new Usuario();
+    $usuario->conectar("cadastrousuarioturma33", "localhost", "root","");
+    $dados = $usuario->listarUsuarios();
 ?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Usuários</title>
+    <title>Listar Dados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #fefae0;
+    }
+
+    table {
+        width: 40%;
+        border-collapse: collapse;
+        margin-left: -50rem;
+        font-size: 15px;
+        text-align: left;
+        
+    }
+
+    table th, table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #bc4749;
+        color: white;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #edede9;
+    }
+
+    table tr:hover {
+        background-color: #ddd;
+    }
+    button{
+        font-size: 10px;
+        color: #bc4749;
+    }
+    button:hover{
+        cursor: pointer;
+        color: #ef476f;
+    }
+    h2{
+        color: #3a5a40;
+        font-size: 30px;
+        margin-top: -23rem;
+        margin-left: 100px;
+    }
+    </style>
 </head>
 <body>
-    <h1>Lista de Usuários</h1>
-    <table borde="1">
-        <tr>
-            <th>ID Usuário</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th>Senha</th>
-        </tr>
+    <div>
+        <h2>LISTAR USUÁRIOS</h2>
+    </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+ 
+            <?php 
+                if(!empty($dados))
+                {
+                    foreach($dados as $pessoa):
+                ?>
+                     <tr>
+                        <td><?php echo $pessoa ['nome']; ?></td>
+                        <td><?php echo $pessoa ['email']; ?></td>
+                        <td><?php echo $pessoa ['telefone']; ?></td>
+                     </tr> 
 
-        <?php
-        // Exibindo os dados na tabela
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . $row["id_usuario"] . "</td>";
-                echo "<td>" . $row["nome"] . "</td>";
-                echo "<td>" . $row["email"] . "</td>";
-                echo "<td>" . $row["telefone"] . "</td>";
-                echo "<td>" . $row["senha"] . "</td>";
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td colspan='5'>Nenhum usuário encontrado</td></tr>";
-        }
-        $conn->close();
-        ?>
-    </table>
-</body>
-</html>
-
+                
+                <?php
+                endforeach;
+                }
+                else{
+                    echo"Nenhum usuário cadstrado";
+                }
+            ?>
+            
+ 
+ 
+            </tbody>
+        </table>
 </body>
 </html>

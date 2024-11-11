@@ -67,8 +67,21 @@
             {
                 return false;
             }
+            
         }
 
-
+        public function listarUsuarios(){
+            global $pdo;
+            $sqllistar  = $pdo->prepare("SELECT * FROM usuario");
+            $sqllistar->execute();
+            if( $sqllistar->rowCount() > 0)
+            {
+                $dados = $sqllistar->fetchAll(PDO::FETCH_ASSOC);
+                return $dados;
+            }
+            else{
+                return false;
+            }
+        }
     }
 ?>
