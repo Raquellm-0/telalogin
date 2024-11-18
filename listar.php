@@ -47,8 +47,10 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["email"] . "</td>";
                 echo "<td>" . $row["telefone"] . "</td>";
                 echo "<td>" . $row["senha"] . "</td>";
-                echo "</tr>";
+                echo "<td>" . $row["editar"] . "</td>";
+                
             }
+            
         } else {
             echo "<tr><td colspan='5'>Nenhum usuário encontrado</td></tr>";
         }

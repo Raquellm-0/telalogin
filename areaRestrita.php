@@ -5,19 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- <style>
-        h1{
-            color: #3a5a40;
-            font-size: 30px;
-            padding: 0% 20px;
-            margin-top: -25rem;
-            display: flex;
-        }
-    </style> -->
 </head>
-<body>
-    <!-- <h1>Logou...</h1> -->
-    
+<body>   
 </body>
 </html>
 <?php
@@ -32,7 +21,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar Dados</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <style>
     body {
@@ -110,6 +98,8 @@
                         <td><?php echo $pessoa ['nome']; ?></td>
                         <td><?php echo $pessoa ['email']; ?></td>
                         <td><?php echo $pessoa ['telefone']; ?></td>
+                        <td><?php echo ['editar']; ?></td>
+                        
                      </tr> 
 
                 
@@ -120,9 +110,6 @@
                     echo"Nenhum usuário cadstrado";
                 }
             ?>
-            
- 
- 
             </tbody>
         </table>
 </body>
