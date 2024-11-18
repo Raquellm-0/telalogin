@@ -46,9 +46,6 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["nome"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
                 echo "<td>" . $row["telefone"] . "</td>";
-                echo "<td>" . $row["senha"] . "</td>";
-                echo "<td>" . $row["editar"] . "</td>";
-                
             }
             
         } else {

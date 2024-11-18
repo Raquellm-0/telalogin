@@ -36,10 +36,9 @@
     table {
         width: 40%;
         border-collapse: collapse;
-        margin-left: -50rem;
         font-size: 15px;
         text-align: left;
-        
+        transform: translate(-20%,10%);
     }
 
     table th, table td {
@@ -70,8 +69,7 @@
     h2{
         color: #3a5a40;
         font-size: 30px;
-        margin-top: -23rem;
-        margin-left: 100px;
+        transform: translate(23rem,-20rem);
     }
     </style>
 </head>
@@ -85,6 +83,8 @@
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Telefone</th>
+                    <th>Editar</th>
+                    <th>Excluír</th>
                 </tr>
             </thead>
             <tbody>
@@ -98,7 +98,8 @@
                         <td><?php echo $pessoa ['nome']; ?></td>
                         <td><?php echo $pessoa ['email']; ?></td>
                         <td><?php echo $pessoa ['telefone']; ?></td>
-                        <td><?php echo ['editar']; ?></td>
+                        <td><a href="update_page_1.php?id=<?php echo $pessoa ['nome']; ?>" class="btn btn-success">Editar</a></td>
+                        <td><a href="delete_page.php?id=<?php echo $pessoa ['nome']; ?>" class="btn btn-success" class="btn btn-danger">Excluír</a></td>
                         
                      </tr> 
 

@@ -46,7 +46,7 @@
             font-size: 15px;
             top: 50%;
             left: 50%;
-            transform: translate(42%,36rem);
+            transform: translate(42%,37rem);
             padding: 60px;
             color: white;
         }
@@ -68,9 +68,9 @@
             <label>Senha:</label><br><br>
             <input type="password" name="senha" id="" placeholder="**********"><br><br>
             <input id="button-1" type="submit" value="LOGAR"><br><br>
+            <a id="insc" href="cadastro.php">INSCREVA-SE</a>
         </form>
     </div>
-    <a id="insc" href="cadastro.php">INSCREVA-SE</a>
     <?php
         if(isset($_POST['email']))
         {
