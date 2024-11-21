@@ -39,6 +39,7 @@
         font-size: 15px;
         text-align: left;
         transform: translate(-20%,10%);
+        margin-top: 50px;
     }
 
     table th, table td {
@@ -99,7 +100,7 @@
                         <td><?php echo $pessoa ['email']; ?></td>
                         <td><?php echo $pessoa ['telefone']; ?></td>
                         <td><a href="update_page_1.php?id_usuario=<?php echo $pessoa ['id_usuario']; ?>" class="btn btn-success">Editar</a></td>
-                        <td><a href="delete_page.php?id_usuario=<?php echo $pessoa ['nome']; ?>" class="btn btn-success" class="btn btn-danger">Excluír</a></td>
+                        <td><a href="delete_page.php?id_usuario=<?php echo $pessoa ['id_usuario']; ?>" class="btn btn-success" class="btn btn-danger">Excluír</a></td>
                         
                      </tr> 
 

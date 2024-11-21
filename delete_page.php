@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 if (isset($_GET['id_usuario'])) {
     $id = $_GET['id_usuario'];
-    $query = "DELETE * FROM `usuario` WHERE `id_usuario` = '$id'";
+    $query = "DELETE FROM `usuario` WHERE `id_usuario` = $id";
     $result = mysqli_query($conn, $query);
 
 
