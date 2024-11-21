@@ -58,6 +58,7 @@
             display: flex;
         }
     </style>
+    
 </head>
 <body>
     <div class="tela">

@@ -1,30 +1,54 @@
-<?php
-    require_once 'usuario.php';
-    $usuario = new Usuario();
-?>
+<?php 
 
-<?php
-    if(isset($_GET['nome'])){
-        $nome = $_GET['nome'];
-        $query = "select * from 'usuario' where 'nome' = '$nome'";
-        $result = mysql_query($conn, $query);
-        if(!$result){
-            die("query Failed".mysqlerror());
-        }
-        else{
-            $row = mysql_fetch_row($result);
-            print_r($row);
-        }
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "cadastrousuarioturma33";
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
+}
+
+if (isset($_GET['id_usuario'])) {
+    $id = $_GET['id_usuario'];
+    $query = "SELECT * FROM `usuario` WHERE `id_usuario` = '$id'";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+
+}
+
+if (isset($_POST['update_usuario'])){
+    if(isset($_GET['id_new'])){
+        $idnew = $_GET['id_new'];
+    }    
+
+
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+
+    $query = "UPDATE `usuario` SET `nome` = '$nome', `email` = '$email', `telefone` = '$telefone' WHERE `id_usuario` = $id";
+    $result = mysqli_query($conn, $query);
+
+    if (!$result) {
+        die("Query Failed: " . mysqli_error($conn));
+    } 
+    else{
+        header('Location: areaRestrita.php?update_msg=Editado com sucesso');
     }
+}
 ?>
-
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Cadastro</title>
+    <title>Tela Editar</title>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -87,23 +111,32 @@
         }
     </style>
 </head>
+
+
 <body>
-    <div class="box">
-        <form action="" method="post">
-            <fieldset>
-                <legend>Editar Usuário</legend><br>
-                <div class="input-box">
-                    <label>Nome:</label><br><br>
-                    <input type="text" name="nome" id="" placeholder="Nome Completo" value="<?php echo $row['nome']"><br><br>
+<div class="box">
+    <form action="update_page_1.php?id_usuario=<?php echo $id; ?>" method="post">
+        <fieldset>
+            <legend>Editar Usuário</legend><br>
+            <div class="form-group">
+                <label for="nome">Nome:</label><br><br>
+                <input type="text" name="nome" value="<?php echo $row['nome']; ?>"><br><br>
+            </div>  
+            <div class="form-group">
+                <label for="email">Email:</label><br><br>
+                <input type="email" name="email" placeholder="Digite o email" 
+                    value="<?php echo isset($row['email']) ? $row['email'] : ''; ?>"><br><br>
+            </div>
+            <div class="input-box">
+                <label for="telefone">Telefone:</label><br><br>
+                <input type="tel" name="telefone" placeholder="Telefone" 
+                    value="<?php echo isset($row['telefone']) ? $row['telefone'] : ''; ?>"><br><br>
+            </div>    
+            <input id="submit" name="update_usuario" type="submit" value="Editar">
+        </fieldset>    
+    </form>
+</div>
 
-                    <label>Email:</label><br><br>
-                    <input type="email" name="email" id="" placeholder="Digite o email" value="<?php echo $row['nome']"><br><br>
 
-                    <label>Telefone:</label><br><br>
-                    <input type="tel" name="telefone" id="" placeholder="Telefone Completo" value="<?php echo $row['nome']"><br><br>
-
-                    <input href="lista.php" id="submit" type="submit" value="Editar">
-                </div>
-            </fieldset>    
-        </form>
-    </div>
+</body>
+</html>

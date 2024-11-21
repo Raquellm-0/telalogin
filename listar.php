@@ -2,9 +2,9 @@
 <?php
 // Configurações de conexão com o banco de dados
 $servername = "localhost";
-$username = "seu_usuario";
-$password = "sua_senha";
-$dbname = "nome_do_banco_de_dados";
+$username = "root";
+$password = "";
+$dbname = "cadastrousuarioturma33";
 
 // Criando a conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL para buscar os dados
-$sql = "SELECT id_usuario, nome, email, telefone, senha FROM usuarios";
+$sql = "SELECT id_usuario, nome, email, telefone, senha FROM usuario";
 $result = $conn->query($sql);
 ?>
 
@@ -56,3 +56,5 @@ $result = $conn->query($sql);
     </table>
 </body>
 </html>
+
+

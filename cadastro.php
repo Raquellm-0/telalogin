@@ -70,6 +70,15 @@
             padding: 60px;
             color: white;
         }
+        .msg-sucesso{
+            font-size: 12px;
+            top: 52%;
+            left: 50%;
+            transform: translate(0%,42.5rem);
+            padding: 60px;
+            color: white;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -174,3 +183,5 @@
     ?>
 </body>
 </html>
+
+

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    
 </head>
 <body>   
 </body>
@@ -98,8 +98,8 @@
                         <td><?php echo $pessoa ['nome']; ?></td>
                         <td><?php echo $pessoa ['email']; ?></td>
                         <td><?php echo $pessoa ['telefone']; ?></td>
-                        <td><a href="update_page_1.php?id=<?php echo $pessoa ['nome']; ?>" class="btn btn-success">Editar</a></td>
-                        <td><a href="delete_page.php?id=<?php echo $pessoa ['nome']; ?>" class="btn btn-success" class="btn btn-danger">Excluír</a></td>
+                        <td><a href="update_page_1.php?id_usuario=<?php echo $pessoa ['id_usuario']; ?>" class="btn btn-success">Editar</a></td>
+                        <td><a href="delete_page.php?id_usuario=<?php echo $pessoa ['nome']; ?>" class="btn btn-success" class="btn btn-danger">Excluír</a></td>
                         
                      </tr> 
 
