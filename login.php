@@ -12,10 +12,10 @@
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #dad7cd;
+            background-color: #f7f4ed;
         }
         .tela{
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: #0b1957;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -25,13 +25,13 @@
             color: white;
         }
         input{
-            padding: 15px;
+            padding: 14px ;
             border: none;
             outline: none;
             font-size: 15px;
         }
         #button-1{
-            background-color: #0077b6;
+            background-color: #426bc2;
             border: none;
             padding: 10px;
             width: 100%;
@@ -39,8 +39,9 @@
             color: white;
         }
         #button-1:hover{
-            background-color: deepskyblue;
+            background-color: #e9f3ff;
             cursor: pointer;
+            color: #0b1957;
         }
         .msg-erro-c{
             font-size: 15px;
@@ -57,12 +58,19 @@
             left: 50%;
             display: flex;
         }
+        #insc:hover{
+            color: #426bc2;
+        }
+        .h11{
+            text-align: center;
+        }
+        
     </style>
     
 </head>
 <body>
     <div class="tela">
-        <h1>Tela Login</h1><br><br>
+        <h1 class="h11">TELA LOGIN</h1><br><br>
         <form method="POST">
             <label>Usuario:</label><br><br>
             <input type="email" name="email" id="" placeholder="Digite seu email."><br><br>
@@ -113,7 +121,7 @@
                     </div>
                 <?php
             }
-        }
+        } 
     ?>
 </body>
 </html>

@@ -5,7 +5,6 @@ $username = "root";
 $password = "";
 $dbname = "cadastrousuarioturma33";
 
-
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 
@@ -52,7 +51,7 @@ if (isset($_POST['update_usuario'])){
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #dad7cd;
+            background-color: #f7f4ed;
         }
         .box{
             position: absolute;
@@ -61,20 +60,20 @@ if (isset($_POST['update_usuario'])){
             transform: translate(-50%,-50%);
             padding: 60px;
             border-radius: 15px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: #0b1957;
             color: white;
         }
         fieldset{
-            border: 3px solid dodgerblue;
+            border: 3px solid #d2b3db;
             padding: 30px 50px;
         }
         legend{
-            border: 1px solid dodgerblue;
+            border: 1px solid #d2b3db;
             padding: 10px;
             text-align: center;
-            background-color: #0077b6;
+            background-color: #d2b3db;
             border-radius: 8px;
+            font-size: 15px;
         }
         .input-box{
             position: relative;
@@ -117,7 +116,7 @@ if (isset($_POST['update_usuario'])){
 <div class="box">
     <form action="update_page_1.php?id_usuario=<?php echo $id; ?>" method="post">
         <fieldset>
-            <legend>Editar Usuário</legend><br>
+            <legend>EDITAR USUÁRIO</legend><br>
             <div class="form-group">
                 <label for="nome">Nome:</label><br><br>
                 <input type="text" name="nome" value="<?php echo $row['nome']; ?>"><br><br>

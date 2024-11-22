@@ -13,29 +13,29 @@
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #dad7cd;
+            background-color: #f7f4ed;
         }
         .box{
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            padding: 60px;
+            padding: 70px;
             border-radius: 15px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: #0b1957;
             color: white;
         }
         fieldset{
-            border: 3px solid dodgerblue;
+            border: 3px solid #d2b3db;
             padding: 30px 50px;
         }
         legend{
-            border: 1px solid dodgerblue;
+            border: 1px solid #d2b3db;
             padding: 10px;
             text-align: center;
-            background-color: #0077b6;
+            background-color: #d2b3db;
             border-radius: 8px;
+            font-size: 20px;
         }
         .input-box{
             position: relative;
@@ -51,7 +51,7 @@
             letter-spacing: 1px;
         }
         #submit{
-            background-color: #0077b6;
+            background-color: #426bc2;
             border: none;
             padding: 10px;
             width: 100%;
@@ -59,8 +59,9 @@
             color: white;
         }
         #submit:hover{
-            background-color: deepskyblue;
+            background-color: #e9f3ff;
             cursor: pointer;
+            color: #0b1957;
         }
         .msg-erro-c{
             font-size: 20px;
@@ -71,12 +72,21 @@
             color: white;
         }
         .msg-sucesso{
-            font-size: 12px;
+            font-size: 15px;
             top: 52%;
             left: 50%;
             transform: translate(0%,42.5rem);
             padding: 60px;
             color: white;
+            text-align: center;
+        }
+        .a{
+            font-size: 15px;
+            top: 52%;
+            left: 50%;
+            transform: translate(0%,42.5rem);
+            padding: 2px;
+            color: #e9f3ff;
             text-align: center;
         }
     </style>
@@ -120,7 +130,6 @@
             if(!empty($nome) && !empty($telefone) && !empty($email) && !empty($senha) && !empty($confSenha))
             {   
 
-
                 $usuario->conectar("cadastrousuarioturma33","localhost","root","");
 
                 if($usuario->msgErro == "")
@@ -131,10 +140,9 @@
                         if($usuario->cadastrar($nome, $telefone, $email, $senha))
                         { 
                             ?>
-                                <!-- bloco de HTML -->
                                 <div class="msg-sucesso">
                                     <p>Cadastrado com Sucesso</p>
-                                    <p>Clique <a href="login.php">aqui </a> para logar.</p>
+                                    <p class="p">Clique <a class="a" href="login.php">AQUI</a> para logar</p>
                                 </div>
                             <?php
                         }
@@ -143,8 +151,7 @@
                             ?>
                                 <div class="msg-erro-c">
                                     <p>Email Já Cadastrado.</p>
-                                </div> 
-
+                                </div>
                             <?php
                         }
                     }
@@ -153,10 +160,8 @@
                         ?>
                             <div class="msg-erro-c">
                             <p>Senha e Confirmar</p>
-                            </div> 
-
-                        <?php
-                                
+                            </div>
+                        <?php        
                     }
                 }
                 else
@@ -164,8 +169,7 @@
                     ?>
                     <div class="msg-erro-c">
                         <?php echo "Erro: ",$usuario->msgErro;?>
-                    </div> 
-
+                    </div>
                     <?php
 
                 }
@@ -176,11 +180,10 @@
                     <div class="msg-erro-c">
                         <p>Preencha todos os campos.</p>
                     </div> 
-
                 <?php
             }
         }
-    ?>
+    ?>  
 </body>
 </html>
 

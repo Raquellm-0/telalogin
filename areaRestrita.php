@@ -23,17 +23,16 @@
     <title>Listar Dados</title>
 
     <style>
-    body {
+    body{
         font-family: Arial, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
         margin: 0;
-        background-color: #fefae0;
+        background-color: #f7f4ed;
     }
-
-    table {
+    table{
         width: 40%;
         border-collapse: collapse;
         font-size: 15px;
@@ -41,37 +40,26 @@
         transform: translate(-20%,10%);
         margin-top: 50px;
     }
-
-    table th, table td {
+    table th, table td{
         padding: 10px;
-        border: 1px solid #ddd;
+        border: 1px solid #d9f3ff;
     }
-
-    table th {
-        background-color: #bc4749;
+    table th{
+        background-color: #0b1957;
         color: white;
     }
-
-    table tr:nth-child(even) {
+    table tr:nth-child(even){
         background-color: #edede9;
     }
-
-    table tr:hover {
+    table tr:hover{
         background-color: #ddd;
     }
-    button{
-        font-size: 10px;
-        color: #bc4749;
-    }
-    button:hover{
-        cursor: pointer;
-        color: #ef476f;
-    }
     h2{
-        color: #3a5a40;
+        color: #0b1957;
         font-size: 30px;
         transform: translate(23rem,-20rem);
     }
+
     </style>
 </head>
 <body>
@@ -99,8 +87,8 @@
                         <td><?php echo $pessoa ['nome']; ?></td>
                         <td><?php echo $pessoa ['email']; ?></td>
                         <td><?php echo $pessoa ['telefone']; ?></td>
-                        <td><a href="update_page_1.php?id_usuario=<?php echo $pessoa ['id_usuario']; ?>" class="btn btn-success">Editar</a></td>
-                        <td><a href="delete_page.php?id_usuario=<?php echo $pessoa ['id_usuario']; ?>" class="btn btn-success" class="btn btn-danger">Excluír</a></td>
+                        <td><a href="update.php?id_usuario=<?php echo $pessoa ['id_usuario']; ?>" class="btn btn-success">Editar</a></td>
+                        <td><a href="delete.php?id_usuario=<?php echo $pessoa ['id_usuario']; ?>" class="btn btn-success" class="btn btn-danger">Excluír</a></td>
                         
                      </tr> 
 

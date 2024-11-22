@@ -24,7 +24,7 @@ if (isset($_GET['id_usuario'])) {
     else{
         header('location:areaRestrita.php?delete_msg=Dados excluídos com sucesso');
     }
-}
+} delete
 
 ?>
 
