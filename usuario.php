@@ -31,7 +31,7 @@
             if($sql->rowCount() > 0)
             {
                 return false;
-            }
+            }  
             else
             {
                 //cadastrar usuario

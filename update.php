@@ -115,7 +115,7 @@ if (isset($_POST['update_usuario'])){
 
 <body>
 <div class="box">
-    <form action="update_page_1.php?id_usuario=<?php echo $id; ?>" method="post">
+    <form action="update.php?id_usuario=<?php echo $id; ?>" method="post">
         <fieldset>
             <legend>EDITAR USUÁRIO</legend><br>
             <div class="form-group">
@@ -132,7 +132,7 @@ if (isset($_POST['update_usuario'])){
                 <input type="tel" name="telefone" placeholder="Telefone" 
                     value="<?php echo isset($row['telefone']) ? $row['telefone'] : ''; ?>"><br><br>
             </div>    
-            <input id="submit" name="update_usuario" type="submit" value="Editar">
+            <input href="areaRestrita.php" id="submit" name="update_usuario" type="submit" value="Editar">
         </fieldset>    
     </form>
 </div>
