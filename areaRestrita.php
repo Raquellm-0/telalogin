@@ -33,50 +33,86 @@
         background-color: #f7f4ed;
     }
     table{
-        width: 40%;
         border-collapse: collapse;
         font-size: 15px;
         text-align: left;
-        transform: translate(-20%,10%);
+        transform: translate(-0%,-0%);
         margin-top: 50px;
     }
     table th, table td{
-        padding: 10px;
+        padding: 10px 20px;
         border: 1px solid #d9f3ff;
     }
     table th{
-        background-color: #0b1957;
+        background-color: #426bc2;
         color: white;
     }
     table tr:nth-child(even){
-        background-color: #edede9;
+        background-color: #1F2D6A;
     }
     table tr:hover{
-        background-color: #ddd;
-    }
-    h2{
+        background-color: #C4DFFF;
         color: #0b1957;
-        font-size: 30px;
-        transform: translate(23rem,-20rem);
     }
-
+    fieldset{
+        border: 3px solid #d2b3db;
+        padding: 40px 90px;
+    }
+    legend{
+        border: 1px solid #d2b3db;
+        padding: 10px;
+        text-align: center;
+        background-color: #d2b3db;
+        border-radius: 8px;
+        font-size: 20px;
+        color: white;
+    }
+    .box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 90px;
+        border-radius: 15px;
+        background-color: #0b1957;
+        color: white;
+    }
+    .ed{
+        color: #FBBD08;
+        text-decoration: none;
+    }
+    .ed:hover{
+        color: #0b1957;
+        cursor: pointer;
+    }
+    .ex{
+        color: #D02225;
+        text-decoration: none;
+    }
+    .ex:hover{
+        color: #0b1957;
+        cursor: pointer;
+    }
     </style>
 </head>
 <body>
-    <div>
-        <h2>LISTAR USUÁRIOS</h2>
+    <div class="box">
+        <fieldset>
+            <legend>LISTAR USUÁRIOS</legend>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Editar</th>
+                        <th>Excluír</th>
+                    </tr>
+                </thead>
+                <tbody>
+        </fieldset>
     </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Editar</th>
-                    <th>Excluír</th>
-                </tr>
-            </thead>
-            <tbody>
  
             <?php 
                 if(!empty($dados))
@@ -87,8 +123,8 @@
                         <td><?php echo $pessoa ['nome']; ?></td>
                         <td><?php echo $pessoa ['email']; ?></td>
                         <td><?php echo $pessoa ['telefone']; ?></td>
-                        <td><a href="update.php?id_usuario=<?php echo $pessoa ['id_usuario']; ?>" class="btn btn-success">Editar</a></td>
-                        <td><a href="delete.php?id_usuario=<?php echo $pessoa ['id_usuario']; ?>" class="btn btn-success" class="btn btn-danger">Excluír</a></td>
+                        <td><a class="ed" href="update.php?id_usuario=<?php echo $pessoa ['id_usuario']; ?>" class="btn btn-success">Editar</a></td>
+                        <td><a class="ex" href="delete.php?id_usuario=<?php echo $pessoa ['id_usuario']; ?>" class="btn btn-success" class="btn btn-danger">Excluír</a></td>
                         
                      </tr> 
 
