@@ -35,7 +35,7 @@
             text-align: center;
             background-color: #d2b3db;
             border-radius: 8px;
-            font-size: 20px;
+            font-size: 16px;
         }
         .input-box{
             position: relative;
@@ -95,7 +95,7 @@
     <div class="box">
         <form action="" method="post">
             <fieldset>
-                <legend>Cadastro de Usuário</legend><br>
+                <legend>CADASTRO DE USUÁRIO</legend><br>
                 <div class="input-box">
                     <label>Nome:</label><br><br>
                     <input type="text" name="nome" id="" placeholder="Nome Completo"><br><br>
