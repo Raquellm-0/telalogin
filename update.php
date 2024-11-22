@@ -117,7 +117,7 @@ if (isset($_POST['update_usuario'])){
 <div class="box">
     <form action="update.php?id_usuario=<?php echo $id; ?>" method="post">
         <fieldset>
-            <legend>EDITAR USUÁRIO</legend><br>
+            <legend>Editar Usuário</legend><br>
             <div class="form-group">
                 <label for="nome">Nome:</label><br><br>
                 <input type="text" name="nome" value="<?php echo $row['nome']; ?>"><br><br>

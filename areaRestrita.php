@@ -98,7 +98,7 @@
 <body>
     <div class="box">
         <fieldset>
-            <legend>LISTAR USUÁRIOS</legend>
+            <legend>Listar Usuários</legend>
         
             <table>
                 <thead>

@@ -95,7 +95,7 @@
     <div class="box">
         <form action="" method="post">
             <fieldset>
-                <legend>CADASTRO DE USUÁRIO</legend><br>
+                <legend>Cadastro de Usuário</legend><br>
                 <div class="input-box">
                     <label>Nome:</label><br><br>
                     <input type="text" name="nome" id="" placeholder="Nome Completo"><br><br>

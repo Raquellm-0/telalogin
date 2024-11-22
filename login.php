@@ -70,7 +70,7 @@
 </head>
 <body>
     <div class="tela">
-        <h1 class="h11">TELA LOGIN</h1><br><br>
+        <h1 class="h11">Login</h1><br><br>
         <form method="POST">
             <label>Usuario:</label><br><br>
             <input type="email" name="email" id="" placeholder="Digite seu email."><br><br>
