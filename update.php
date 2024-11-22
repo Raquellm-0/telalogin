@@ -89,7 +89,7 @@ if (isset($_POST['update_usuario'])){
             letter-spacing: 1px;
         }
         #submit{
-            background-color: #0077b6;
+            background-color: #426bc2;
             border: none;
             padding: 10px;
             width: 100%;
@@ -97,8 +97,9 @@ if (isset($_POST['update_usuario'])){
             color: white;
         }
         #submit:hover{
-            background-color: deepskyblue;
+            background-color: #e9f3ff;
             cursor: pointer;
+            color: #0b1957;
         }
         .msg-erro-c{
             font-size: 20px;
